@@ -4,10 +4,10 @@
    "content":{
       "metaDataVersion":"1.0.0",
       "name":"com.microchip.mplabx.project.epc9137-power-48v-12v-bus-balancer",
-      "version":"x.x.x",
-      "displayName":"xxxxxxxxxxxxxxx",
+      "version":"1.0.0",
+      "displayName":"EPC9137 1.5 kW 48V/12V Bi-directional Power Module",
       "projectName":"epc9137-power-48v-12v-bus-balancer",
-      "shortDescription":"xxxxxxxxxxxxxxx",
+      "shortDescription":"EPC9137 1.5 kW 48V/12V Bi-directional Power Module Evaluation Board Firmware",
       "ide":{
          "name":"MPLABX",
          "semverRange":">=5.40.0"
@@ -17,8 +17,8 @@
          "semverRange":"^1.50.0"
       },
       "dfp":{
-         "name":"xxxxxxxxxxxxxxx",
-         "semverRange":">=x.x.x"
+         "name":"dsPIC33CK-MP_DFP",
+         "semverRange":">=1.4.102"
       },
 	  "configurator": {
          "name": "MCC",
@@ -30,17 +30,29 @@
          "content":{
             "metaDataVersion":"1.0.0",
             "category":"com.microchip.device",
-            "name":"xxxxxxxxxxxxxxx",
+            "name":"dsPIC33CK256MP505",
             "versionRange":"*"
          }
       },
       "peripherals":[
-         "DMA",
-         "CAN"
+        "UART",
+        "PWM",
+        "SMPS PWM",
+        "ADC",
+        "TIMER"
       ],
+      "subcategories": [
+		"Power",
+		"Power Management and Conversion"
+       ],
       "keywords":[
-         "DMA",
-         "Sensor"
+		"dsPIC",
+        "DSC",
+        "Digital Power Conversion",
+        "Digital Filters",
+        "Power Conversion",
+        "Power Supply",
+		"SMPS"
       ]
    }
 }
