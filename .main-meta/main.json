@@ -4,7 +4,7 @@
    "content":{
       "metaDataVersion":"1.0.0",
       "name":"com.microchip.mplabx.project.epc9137-power-48v-12v-bus-balancer",
-      "version":"1.0.0",
+      "version":"1.0.1",
       "displayName":"EPC9137 1.5 kW 48V/12V Bi-directional Power Module",
       "projectName":"epc9137-power-48v-12v-bus-balancer",
       "shortDescription":"EPC9137 1.5 kW 48V/12V Bi-directional Power Module Evaluation Board Firmware",
