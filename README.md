@@ -80,9 +80,10 @@
 This code example demonstrates a closed loop current mode control implementation for dsPIC33CK. It has been specifically developed for the EPC9137 1.5 kW Bi-Directional 48V-to-12V power module, hardware revision 4.0 (see 'Rev' number printed on board top view shown above for verification).
 
 <center>
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/rXREE3YrfNY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-</iframe>
-<p style="font-size:14px;">Bidirectional 1.5 kW 48-to-12V Bus Converter Introduction</p>
+<a target="_blank" href="https://youtu.be/rXREE3YrfNY" rel="nofollow">
+ <img src="images/epc9137_video.png" alt="EPC9137 Bidirectional 1.5 kW 48-to-12V Bus Converter Introduction Video" width="560" height="315">
+</a>
+<p style="font-size:14px;">Bidirectional 1.5 kW 48-to-12V Bus Converter Introduction Video</p>
 </center>
 
 <details><summary>Read more...</summary>
@@ -486,7 +487,7 @@ Please refer to the user guide of PowerSmart&trade; DCLD which is included in th
 
 <details><summary>Show details...</summary>
 
-No user control interface has been added to the firmware. Any change to the firmware and fundamental operation of the reference design, including reprogramming of the nominal output voltage can be done by editing the hardware-specific values in the hardware description header file 'epc9137_r40_hwdescr.h' located in 'Project Manager => Header Files/Config'
+No user control interface has been added to the firmware. Any change to the firmware and fundamental operation of the reference design, including reprogramming of the nominal output voltage can be done by editing the hardware-specific values in the hardware description header file `epc9137_r40_hwdescr.h` located in 'Project Manager => Header Files/Config'
 
 Converter settings in this file are defined as physical quantities such as Volt, Ampere, Ohm, etc. Each defined value is converted into binary numbers by so-called macros, at compile time. Thus, users do not have to convert values manually.
 

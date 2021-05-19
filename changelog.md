@@ -1,3 +1,10 @@
+# epc9137-power-48v-12v-bus-balancer, release v1.0.1
+
+### Features Added\Updated
+
+This release fixes a broken link in the main README file pointing to the introduction video of this converter.
+Please review the previous release notes of version 1.0.0 for more details about this firmware version.. 
+
 # epc9137-power-48v-12v-bus-balancer, release v1.0.0
 
 ### Release Highlights
