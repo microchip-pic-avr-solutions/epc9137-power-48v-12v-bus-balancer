@@ -2,7 +2,11 @@
 
 ### Features Added\Updated
 
-In this release more information was added to the main README file, improving the evaluation kit demonstration modes, technical data and use-case descriptions. 
+In this release more information was added to the main README file, improving descriptions of the evaluation kit demonstration modes, technical data and use-case descriptions. 
+
+### Known Limitations:
+
+This initial release version 1.0 supports step-down operation only and is provided to support initial module opperation and basic code implementation evaluation, while development of a universal firmware supporting step-down and step-up operaion and related switch-over functions is still ongoing and will be rolled out with the upcoming release version 2.0.
 
 # epc9137-power-48v-12v-bus-balancer, release v1.0.1
 
