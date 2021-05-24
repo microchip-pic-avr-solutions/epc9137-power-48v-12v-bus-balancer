@@ -8,38 +8,38 @@
 
 <table style="border: none; align:center; width:100%">
 <tr>
- <td style="align:center;"> &nbsp; </td>
- <td style="text-align:center; vertical-align: bottom; height:360px; width:300px;"> 
+ <td style="border: none; align:center;"> &nbsp; </td>
+ <td style="border: none; text-align:center; vertical-align: bottom; height:360px; width:300px;"> 
     <img src="images/epc9137_r4.png" alt="EPC9137 Power Module" width="300"> 
  </td>
- <td style="align:center; width:10px"> &nbsp; </td>
- <td style="text-align:center; vertical-align: bottom;"> 
+ <td style="border: none; align:center; width:10px"> &nbsp; </td>
+ <td style="border: none; text-align:center; vertical-align: bottom;"> 
     <table style="border: none; align:center; width:300px">
     <tr>
-    <td style="text-align:center; vertical-align:bottom; width:300px">
+    <td style="border: none; text-align:center; vertical-align:bottom; width:300px">
     <img src="images/epc9528_top.jpg" alt="EPC9528 Bottom View" width="160"> <br>
     <p style="font-size:14px;">Top View</p>
     </td>
     </tr>
     <tr>
-    <td style="text-align:center; vertical-align: bottom; width:300px">
+    <td style="border: none; text-align:center; vertical-align: bottom; width:300px">
     <img src="images/epc9528_bottom.jpg" alt="EPC9528 Bottom View" width="150"> <br>
     <p style="font-size:14px;">Bottom View</p>
     </td>
     </tr>
     </table>
 </td>
- <td style="align:center;"> &nbsp; </td>
+ <td style="border: none; align:center;"> &nbsp; </td>
 </tr>
 <tr>
- <td style="align:center;"> &nbsp; </td>
- <td align=center> <b>EPC9137 Power Module</b> </td>
- <td style="align:center;"> &nbsp; </td>
- <td align=center> <b>EPC9528 Controller Card</b></td>
- <td style="align:center;"> &nbsp; </td>
+ <td style="border: none; align:center;"> &nbsp; </td>
+ <td align=center style="border: none;"> <b>EPC9137 Power Module</b> </td>
+ <td style="border: none; align:center;"> &nbsp; </td>
+ <td align=center style="border: none;"> <b>EPC9528 Controller Card</b></td>
+ <td style="border: none; align:center;"> &nbsp; </td>
 </tr>
 <tr>
-<td align=center colspan="5">
+<td align=center colspan="5" style="border: none;">
 <p style="font-size:14px;">
 <a target="_blank" href="https://www.microchip.com/EPC9137" rel="nofollow">
 1.5 kW 48V/12V Bi-directional Power Module (Part-No. EPC9137)  <br> with Processor Plug-In Card (Part-No. EPC9528)
@@ -58,7 +58,8 @@
 - [Summary](#summary)
   - [Related Documentation](#docs)
   - [Development Tools](#devtools)
-- [Security and Safety Requirements](#safety)
+  - [Security and Safety Requirements](#safety)
+  - [Regulatory Information](#regulatory)
 - [Demo Setup](#setup)
   - [Heatsink Assembly](#heatsink)
   - [Buck Mode Operation](#buckmode)
@@ -77,7 +78,7 @@
 
 ## Summary
 
-This code example demonstrates a closed loop current mode control implementation for dsPIC33CK. It has been specifically developed for the EPC9137 1.5 kW Bi-Directional 48V-to-12V power module, hardware revision 4.0 (see 'Rev' number printed on board top view shown above for verification).
+Mild hybridization of vehicles utilizes 48V systems with improved fuel economy and reduced emissions at relatively low cost. This approach provides another, effective and affordable transition point between conventional combustion engines and full electric cars. 48V hybridization aids the internal combustion engines increasing efficiency by driving auxiliary functions such as E-Turbos, regenerative brakes, electronic power steering racks or water pumps, which use electric motors rather than being powered by the engine directly.
 
 <center>
 <a target="_blank" href="https://youtu.be/rXREE3YrfNY" rel="nofollow">
@@ -88,7 +89,11 @@ This code example demonstrates a closed loop current mode control implementation
 
 <details><summary>Read more...</summary>
 
-The board starts up automatically when a voltage between defined minimum and maximum input voltage is applied across the 48V-input terminals of the board, providing a regulated output voltage of 12 V DC at the output terminals of the converter. The startup procedure is controlled and executed by the power controller state machine and includes a configurable startup procedure with power-on delay, ramp-up period and power-good delay before dropping into constant regulation mode.
+Despite all obvious advantages of the migration from 12 V to 48 V rail voltage, higher voltages are not beneficial for every load and for other electrical systems cross-platform compatibility prevents fast transition to 48V. Hence, modern mild hybrid vehicles commonly incorporate both, 48 V and 12 V power distribution systems, where 48 V is mainly used for high power loads and power train auxiliary subsystems using energy harvesting methods to recuperate energy storages, while 12 V is still used to power low-power loads and cross-platform electronics such as interior lighting, sensors, actors, driver assistance ECUs or infotainment & navigation. One of the central 48 V combustion engine auxiliary systems is the starter/generator, which is the sole source of electrical power but may not continuously generate energy. Engine boost and recuperation requires additional energy storage capabilities as well as power balancing between 48 V and 12 V rails. This junction point is established by using synchronous multiphase step-up/step-down converters exchanging electrical energy between the energy storages of both rails.
+
+The bi-directional EPC9137 evaluation power module is designed for these automotive 48 V / 12 V DC-DC converter applications. It features the EPC2206 eGaN FETs with AEC-Q101 qualification. The compatible controller card (EPC9528) includes the Microchip dsPIC33CK256MP503 16-bit digital signal controller. It is designed to work with various EPC evaluation boards and modules. As a kit it allow users to analyze the efficiency and performance of the power stage in various different configurations, as well as utilizes embedded digital control to establish non-linear operating schemes and modes by incorporating battery charging and constant output voltage control in both directions, enhanced diagnostics for improved functional system safety and a wide range of communication interfaces and protocol stacks to support seamless integration in control systems of various vehicle models.
+
+The focus of this evaluation kit lies on power conversion performance, efficiency and basic functional aspects. The board starts up automatically when a voltage between the specified minimum and maximum input voltage is applied across the 48V-input terminals of the EPC9137 power board, providing a regulated output voltage of 12 V DC at the output terminals of the converter. The startup procedure is controlled and executed by the power controller state machine and includes a configurable startup procedure with power-on delay, ramp-up period and power-good delay before dropping into constant regulation mode.
 
 #### Fault Management
 
@@ -194,20 +199,30 @@ Unattended operating power supplies are always a potential safety risk as short 
 
 [[back](#startDoc)]
 - - -
+<span id="regulatory"><a name="regulatory"> </a></span>
 
+## Regulatory Information
 
-## Setup
+This power module is for evaluation purposes only. It is not a full-featured power module and cannot be used in final products. No EMI test was conducted. It is not FCC approved.
 
-The EPC9137/EPC9528 kit comes programmed **in buck mode** and ready to be used when unpacked. No reprogramming of the target device is required to operate the board unless features, modes or settings such as the nominal output voltage or start-up timing need to be modified.
+[[back](#startDoc)]
+- - -
+<span id="setup"><a name="setup"> </a></span>
+
+## Demonstration Board Setup
+
+The EPC9137/EPC9528 kit comes programmed **in step-down only mode** and is ready to be used when unpacked. No reprogramming of the target device is required to operate the board unless features, modes or settings such as the nominal output voltage or start-up timing need to be modified.
 
 The EPC9528 controller card must be plugged into the EPC9137 power module before power is applied to the development kit. The converter is starting up automatically when more than 17 V DC are applied across the 48V input terminals of the EPC9137 power module.
 
-In case firmware based features or operating modes need to be changed, the Microchip dsPIC33CK controller can be re-programmed using the in-circuit serial programming port (ICSP) available on the 5-pin header provided on the EPC9528 Controller Card. This interface supports all of Microchip’s in-circuit programmers/debuggers, such as [MPLAB® ICD4](https://www.microchip.com/icd4), [MPLAB® REAL ICE](https://www.microchip.com/realice) or [MPLAB® PICkit4](https://www.microchip.com/pickit4) and previous derivatives.
+In case firmware based features or operating modes need to be changed, the Microchip dsPIC33CK controller can be re-programmed using the in-circuit serial programming port (ICSP) available on the 5-pin header provided on the EPC9528 Controller Card. This interface supports all of Microchip’s in-circuit programmers/debuggers, such as 
 
+- [MPLAB® ICD4 (Part-No DV164045)](https://www.microchip.com/icd4)
+- [MPLAB® REAL ICE (Part-No DV244005)](https://www.microchip.com/realice)
+- [MPLAB® PICkit4 (Part-No PG164140)](https://www.microchip.com/pickit4) 
+- [MPLAB® Snap (Part-No PG164100)](https://www.microchip.com/snap) 
 
-
-**Please read the [EPC9528 Quick Start Guide](https://epc-co.com/epc/documents/guides/EPC9531_qsg.pdf)** to get detailed information about the requirements for setup and operation of this development kit.
-
+**Please read the [EPC9528 Quick Start Guide](https://epc-co.com/epc/documents/guides/EPC9528_qsg.pdf)** to get detailed information about the requirements for setup, operation and reprogramming of the controller card.
 
 <span id="heatsink"><a name="heatsink"> </a></span>
 
@@ -249,68 +264,68 @@ Test Conditions: VIN = 48 V DC
 
 <table style="border: none; align:center; width:100%">
 <tr>
-  <td style="align:center;"> &nbsp; </td>
-  <td style="text-align:center; vertical-align: bottom;"> 
+  <td style="border: none; align:center;"> &nbsp; </td>
+  <td style="border: none; text-align:center; vertical-align: bottom;"> 
   <img src="images/epc9137_efficiency.png" alt="EPC9137 Buck Mode Efficiency" width="360"> 
   </td>
-  <td style="text-align:center; vertical-align: bottom;"> 
+  <td style="border: none; text-align:center; vertical-align: bottom;"> 
   <img src="images/epc9137_losses.png" alt="EPC9137 Buck Mode Losses" width="360"> 
   </td>
-  <td> &nbsp; </td>
+  <td style="border: none;"> &nbsp; </td>
 </tr>
 <tr>
-  <td style="align:center;"> &nbsp; </td>
-  <td style="text-align:center; font-size:14px; vertical-align: bottom; height:10px;"> 
+  <td style="border: none; align:center;"> &nbsp; </td>
+  <td style="border: none; text-align:center; font-size:14px; vertical-align: bottom; height:10px;"> 
     EPC9137 Buck Mode Efficiency
   </td>
-  <td style="text-align:center; font-size:14px; vertical-align: bottom;"> 
+  <td style="border: none; text-align:center; font-size:14px; vertical-align: bottom;"> 
     EPC9137 Buck Mode Losses
   </td>
-  <td> &nbsp; </td>
+  <td style="border: none;"> &nbsp; </td>
 </tr>
 <tr>
-  <td colspan=4 style="align:center; height:8pt;"> </td>
+  <td colspan=4 style="border: none; align:center; height:8pt;"> </td>
 </tr>
 <tr>
-  <td style="align:center;"> &nbsp; </td>
-  <td style="text-align:center; vertical-align: bottom;"> 
+  <td style="border: none; align:center;"> &nbsp; </td>
+  <td style="border: none; text-align:center; vertical-align: bottom;"> 
   <img src="images/epc9137_output_ripple.png" alt="EPC9137 Buck Mode Efficency" width="360"> 
   </td>
-  <td style="text-align:center; vertical-align: bottom;"> 
+  <td style="border: none; text-align:center; vertical-align: bottom;"> 
   <img src="images/epc9137_transient_response.png" alt="EPC9137 Buck Mode Losses" width="360"> 
   </td>
-  <td> &nbsp; </td>
+  <td style="border: none;"> &nbsp; </td>
 </tr>
 <tr>
-  <td style="align:center;"> &nbsp; </td>
-  <td style="text-align:center; font-size:14px; vertical-align: bottom; height:10px;"> 
+  <td style="border: none; align:center;"> &nbsp; </td>
+  <td style="border: none; text-align:center; font-size:14px; vertical-align: bottom; height:10px;"> 
     EPC9137 Buck Mode Output Voltage Ripple <br>
     (2 µs/div, 100 mV/div)
   </td>
-  <td style="text-align:center; font-size:14px; font-size:14px; vertical-align: bottom;"> 
+  <td style="border: none; text-align:center; font-size:14px; font-size:14px; vertical-align: bottom;"> 
     EPC9137 Buck Mode Transient Response @ VOUT = 12 V<br>
-    [<span style="color:#0066ff"> VOUT </span>, <span style="color:#ff00ff">IOUT</span>]
+    [<span style="border: none; color:#0066ff"> VOUT </span>, <span style="color:#ff00ff">IOUT</span>]
     (2 ms/div, 500 mV/div, 6 A/div)
   </td>
-  <td> &nbsp; </td>
+  <td style="border: none;"> &nbsp; </td>
 </tr>
 <tr>
-  <td colspan=4 style="align:center; height:8pt;"> </td>
+  <td colspan=4 style="border: none; align:center; height:8pt;"> </td>
 </tr>
 <tr>
-  <td style="align:center;"> &nbsp; </td>
-  <td colspan=2 style="text-align:center; vertical-align: bottom;"> 
+  <td style="border: none; align:center;"> &nbsp; </td>
+  <td colspan=2 style="border: none; text-align:center; vertical-align: bottom;"> 
   <img src="images/startup-48v-12v.png" alt="EPC9137 Buck Mode Startup Timing" width="360"> 
   </td>
-  <td> &nbsp; </td>
+  <tdstyle="border: none;"> &nbsp; </td>
 </tr>
 <tr>
-  <td style="align:center;"> &nbsp; </td>
-  <td colspan=2 style="text-align:center; font-size:14px; vertical-align: bottom; height:10px;"> 
+  <td style="border: none; align:center;"> &nbsp; </td>
+  <td colspan=2 style="border: none; text-align:center; font-size:14px; vertical-align: bottom; height:10px;"> 
     EPC9137 Buck Mode Output Voltage Startup Timing <br>
     (100 ms/div, 3 V/div)
   </td>
-  <td> &nbsp; </td>
+  <td style="border: none;"> &nbsp; </td>
 </tr>
 </table>
 
@@ -400,7 +415,11 @@ Test Conditions: VIN = 48 V DC
 
 ## Firmware Quick-Start Guide
 
+This firmware is built on Microchip's PowerSmart&trade; Digital Power Firmware Framework. Unified code architectures with selectable building blocks from Operating Systems, Diagnostics Layers to generic and scalable Power Control State Machines and Discrete Feedback Loop Library are supporting the modular nature of this development kit but also the necessary scalability for tailoring standard hard- and software platforms to custom solutions for production.
+
 #### 1) Buck Converter State Machine
+
+The buck converter device driver used in this firmware example is written as feature-rich generic device driver library module providing seamless hardware and microcontroller migration providing users with a high degree of portability and scalability with minimum firmware qualification.
 
 <details><summary>Show details...</summary>
 
@@ -428,17 +447,23 @@ After the Power-On delay has expired, input and output voltage will be measured.
 
 ##### f) Voltage Ramp-Up
 
-Now the digital feedback loop and PWM are enabled and the closed loop system reference value is incremented with every execution of the state machine (100 µsec interval). The control loop has been adjusted to operate with a cross-over frequency of >10 kHz matching the maximum perturbation frequency allowed to keep the control system stable.  
+Now the digital feedback loop and PWM module are enabled and the closed loop system reference value is incremented with every execution of the state machine (default: 100 µsec interval). In average current mode control only the voltage reference is incremented until the output voltage matches the specified reference level.
 
-##### g) Power Good Delay
+##### g) Current Ramp-Up
+
+When powering up against highly capacitive loads, such as a large number of discharged decoupling and input capacitors of the down-stream power distribution network, or batteries, maximum startup current is limited. When the converter powers up against a discharged battery, the feedback loop might run into a current limit condition during Voltage Ramp-Up. In this case, the state machine will switch over to Current Ramp-Up, now incrementing the current reference limit up to a user-specified value.
+
+This current limit mode can be used to implement specific battery charging profiles for different chemistries. At the end of the charging period, the current loop will decrease its output as soon as the outer voltage loop is limiting the output voltage level. This point marks the seamless switch-over into constant voltage mode, at which the converter acts like a conventional, constant voltage source DC/DC converter
+
+##### h) Power Good Delay
 
 After the reference voltage has been increased to the pre-defined nominal level, the state machine switches over into the Power Good Delay period. This is another, simple delay where the control loop is in steady state waiting for the delay period to expire.
 
-##### h) Online
+##### i) Online
 
 After the Power Good Delay has expired, the converter drops into nominal operation. In this condition it continuously observes the reference value for changes. Should any other part of the firmware change the controller reference, the state machine will softly tune into the new level instead of hard-switching the reference.
 
-##### i) Suspend/Error
+##### j) Suspend/Error
 
 If the power controller is shut down and reset by external commands (e.g. fault handler detecting a fault condition or through user-interaction), the state machine is switching into the `SUSPEND` state, which disables the PWM outputs and control loop execution, clears the control histories and resets the state machine back to `RESET`
 
@@ -450,14 +475,9 @@ If the power controller is shut down and reset by external commands (e.g. fault 
 
 #### 2) Cycle-by-Cycle Current Mode Control Loop
 
+The bi-directional control system of EPC9137 is based on the conventional Average Current Mode Control (ACMC). An outer, discrete type III (3P3Z) voltage loop regulates the output voltage by comparing the most recent feedback value against an internally defined reference value (software). The deviation is processed by a discrete type II (2P2Z) compensation filter. The output of the voltage loop sets the reference for the two inner current loops. Each phase current controller processes the deviation between the given dynamic current reference and the individual, most recent current feedback. Each current control loop output adjusts the individual duty cycle  resulting in tightly balanced phase currents. This control scheme is applied to both, 48 V to 12 V downstream buck as well as to 12 V to 48 V upstream boost operation.
+
 <details><summary>Show details...</summary>
-
-The bi-directional control system of EPC9137 is based on the conventional Average Current Mode Control (ACMC). An outer voltage loop regulates the output voltage by comparing the most recent feedback value against an internal reference. The deviation is processed by a discrete type II (2P2Z) compensation filter. The output of the voltage loop sets the reference for the two inner current loops. Each phase current controller processes the deviation between the given dynamic current reference and the individual most recent current feedback. Each current control loop output adjusts the individual duty cycle or phase resulting in tightly balanced phase currents. This control scheme is applied to both, 48 V to 12 V downstream buck as well as to 12 V to 48 V upstream boost operation.
-
-When powered from a single DC source from either side of the converter, the output voltage will be kept constant up to the maximum output current of 125 A in buck, respectively 29 A in boost operation, at which point the converter switches into constant current regulation, effectively disabling the voltage regulation.
-
-This firmware serves as the fundamental building block of battery charging bus balancer systems by implementing an optional, chemistry-specific charging profile balancing between two battery powered bus rails.
-
 
 <p>
   <center>
@@ -466,6 +486,10 @@ This firmware serves as the fundamental building block of battery charging bus b
     EPC9137 Average Current Mode Control Loop
   </center>
 </p>
+
+When powered from a single DC source from either side of the converter, the output voltage will be kept constant up to the maximum output current of 125 A in buck, respectively 29 A in boost operation, at which point the converter switches into constant current regulation, effectively disabling the voltage regulation.
+
+This firmware serves as the fundamental building block of battery charging bus balancer systems by implementing an optional, chemistry-specific charging profile balancing between two battery powered bus rails.
 
 This control loop can be turned on/off by using the ENABLE bit in the STATUS word of the cNPNZ_t controller data structure. The control loop source code is generated and configured by the PowerSmart&trade; - Digital Control Library Designer (PS-DCLD) software.
 
@@ -485,13 +509,14 @@ Please refer to the user guide of PowerSmart&trade; DCLD which is included in th
 
 #### 3) User Control Interface
 
-<details><summary>Show details...</summary>
-
 No user control interface has been added to the firmware. Any change to the firmware and fundamental operation of the reference design, including reprogramming of the nominal output voltage can be done by editing the hardware-specific values in the hardware description header file `epc9137_r40_hwdescr.h` located in 'Project Manager => Header Files/Config'
+
+<details><summary>Show details...</summary>
 
 Converter settings in this file are defined as physical quantities such as Volt, Ampere, Ohm, etc. Each defined value is converted into binary numbers by so-called macros, at compile time. Thus, users do not have to convert values manually.
 
 ##### Example:
+
 To program the converter to provide a nominal output voltage different from the 12 V DC set by default, follow these steps:
 
 - Open the project in MPLAB X® IDE
@@ -525,13 +550,15 @@ The tolerance settings above include the transient response at a maximum load st
 
 #### 4) Power Plant Measurement Support
 
-<details><summary>Show details...</summary>
-
-This code examples includes an alternative, proportional control loop which is commonly used during measurements of the frequency response of the power plant. When the following define is set to TRUE, the common main control loop is replaced by the proportional controller.
+This code example includes an alternative, proportional control loop which is commonly used during measurements of the frequency response of the power plant. When the following define is set to TRUE, the common main control loop is replaced by the proportional controller.
 
 ```c
 epc9137_r40_hwdescr.h:   #define PLANT_MEASUREMENT   false
 ```
+
+<details><summary>Show details...</summary>
+
+</details>
 
 ##### PLEASE NOTE
 
@@ -539,7 +566,6 @@ PROPORTIONAL CONTROLLERS ARE BY DEFAULT UNSTABLE AND NOT SUITED TO REGULATE THE 
 
 FOR MORE INFORMATION ABOUT HOW TO CONDUCT A POWER PLANT MEASUREMENT, PLEASE READ THE SECTIONS IN THE PowerSmart™ DCLD USER GUIDE.
 
-</details>
 
 [[back](#startDoc)]
 - - -
